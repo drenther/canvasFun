@@ -49,9 +49,8 @@ canvas {
 
 @media only screen and (max-width: 500px) {
 	* {
-		font-size: 8px;
+		font-size: 10px;
 	}
-
 	.controls {
 		width: 100%;
 	}
