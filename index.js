@@ -14,6 +14,7 @@ let lastX = 0;
 let lastY = 0;
 
 function draw(e) {
+	console.log(e);
 	e.preventDefault();
 	if (!isDrawing) return;
 
@@ -52,3 +53,16 @@ canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', setXY);
 canvas.addEventListener('mouseup', () => isDrawing = false );
 canvas.addEventListener('mouseout', () => isDrawing = false );
+
+canvas.addEventListener('touchstart', (e) => {
+	e.offsetX = e.touches[0].pageX - e.touches[0].target.offsetLeft;     
+	e.offsetY = e.touches[0].pageY - e.touches[0].target.offsetTop;
+	setXY(e);	
+});
+canvas.addEventListener('touchmove', (e) => {
+	e.offsetX = e.touches[0].pageX - e.touches[0].target.offsetLeft;     
+	e.offsetY = e.touches[0].pageY - e.touches[0].target.offsetTop;
+	draw(e);	
+});
+canvas.addEventListener('touchend', () => isDrawing = false );
+canvas.addEventListener('touchcancel', () => isDrawing = false );
