@@ -14,6 +14,7 @@ let lastX = 0;
 let lastY = 0;
 
 function draw(e) {
+	e.preventDefault();
 	if (!isDrawing) return;
 
 	ctx.strokeStyle = document.querySelector('.pen-color input').value;
@@ -36,6 +37,7 @@ function download() {
 }
 
 function setXY(e) {
+	e.preventDefault();
 	isDrawing = true;
 	[lastX, lastY] = [e.offsetX, e.offsetY];
 }
@@ -51,9 +53,9 @@ canvas.addEventListener('mousedown', setXY);
 canvas.addEventListener('mouseup', () => isDrawing = false );
 canvas.addEventListener('mouseout', () => isDrawing = false );
 
-canvas.addEventListener('touchmove', draw);
-canvas.addEventListener('touchstart', setXY);
-canvas.addEventListener('touchenter', setXY);
-canvas.addEventListener('touchend', () => isDrawing = false );
-canvas.addEventListener('touchleave', () => isDrawing = false );
-canvas.addEventListener('touchcancel', () => isDrawing = false );
+canvas.addEventListener('touchmove', draw, false);
+canvas.addEventListener('touchstart', setXY, false);
+canvas.addEventListener('touchenter', setXY, false);
+canvas.addEventListener('touchend', () => isDrawing = false, false );
+canvas.addEventListener('touchleave', () => isDrawing = false, false );
+canvas.addEventListener('touchcancel', () => isDrawing = false, false );
