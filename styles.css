@@ -51,4 +51,7 @@ canvas {
 	label {
 		display: none;
 	}
+	input {
+		width: 20%;
+	}
 }
