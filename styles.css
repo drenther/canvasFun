@@ -1,0 +1,41 @@
+* {
+	text-align: center;
+}
+
+html, body {
+	margin: 0;
+	background-color: #aaa;
+}
+
+.controls {
+	position: relative;
+	top: 0;
+	margin: 0 auto;
+	display: flex;
+	width: 70%;
+	background-color: #ccc;
+	font-family: 'Open Sans', sans-serif;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px; 
+	box-sizing: border-box;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.controls > * {
+	flex: 1;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.canvas {
+	text-align: center;
+	margin-top: 40px;
+}
+
+canvas {
+	cursor: crosshair;
+	display: inline;
+	background: #fff;
+}
