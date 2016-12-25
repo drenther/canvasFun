@@ -65,3 +65,14 @@ canvas.addEventListener('touchmove', (e) => {
 });
 canvas.addEventListener('touchend', () => isDrawing = false );
 canvas.addEventListener('touchcancel', () => isDrawing = false );
+
+function scrollPrevent(e) {
+	if (e.target === canvas) {
+		e.preventDefault();
+	}
+}
+
+document.addEventListener('touchstart', scrollPrevent);
+document.addEventListener('touchmove', scrollPrevent);
+document.addEventListener('touchend', scrollPrevent);
+document.addEventListener('touchcancel', scrollPrevent);

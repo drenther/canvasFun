@@ -46,3 +46,9 @@ canvas {
 	display: inline;
 	background: #fff;
 }
+
+@media only screen and (max-width: 500px) {
+	label {
+		display: none;
+	}
+}
